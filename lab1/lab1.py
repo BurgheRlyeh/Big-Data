@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def task1():
     x = np.linspace(-2 * np.pi, 2 * np.pi, 1000)
 
-    plt.figure(figsize=(10, 5))
+    plt.figure(num='task 1', figsize=(10, 5))
 
     plt.title('sin(x) & cos(x)')
 
@@ -23,12 +23,15 @@ def task1():
 
 # 2. Создать два вектора: x=-10,-9,…,5; y=-5,-4,…,10
 def task2():
+    print("task 2")
+
     x = np.arange(-10, 6)
     y = np.arange(-5, 11)
 
     print('x: ', x)
     print('y: ', y)
 
+    print()
     return x, y
 
 
@@ -36,6 +39,8 @@ def task2():
 # вектора x, а на четных – элементы вектора y. Отсортировать элементы
 # полученного вектора.
 def task3(x, y):
+    print("task 3")
+
     z = np.empty(x.size + y.size)
     z[0::2] = x
     z[1::2] = y
@@ -45,18 +50,23 @@ def task3(x, y):
     z.sort()
     print('sorted z: ', z)
 
+    print()
     return z
 
 
 # 4. Написать функцию, вычисляющую норму вектора, и найти нормы векторов x,y,z.
 def norm(vector):
-    return math.sqrt(sum(e ** 2 for e in vector))
+    return np.sqrt(sum(e ** 2 for e in vector))
 
 
 def task4(x, y, z):
+    print("task 4")
+
     print('x norm: ', norm(x))
     print('y norm: ', norm(y))
     print('z norm: ', norm(z))
+
+    print()
 
 
 # 5. Создать матрицу А, содержащую 10 строк и 10 столбцов, заполненную
@@ -65,6 +75,8 @@ def task4(x, y, z):
 # каждый из полученных векторов. Из исходной матрицы А получить матрицу В,
 # исключив последние 5 строк и последние 5 столбцов.
 def task5():
+    print("task 5")
+
     matrix = np.arange(1, 101).reshape(10, 10)
     print('matrix: ', matrix)
 
@@ -79,6 +91,8 @@ def task5():
 
     print('submatrix: ', matrix[5:10, 5:10])
 
+    print()
+
 
 # 6. Написать функцию, вычисляющую факториал числа.
 def fact(n):
@@ -86,17 +100,27 @@ def fact(n):
 
 
 def task6(n):
+    print("task 6")
+
     print('factorial(', n, ') = ', fact(n))
+
+    print()
 
 
 # 7. Создайте вектор, состоящий из 5 элементов, с помощью ввода с клавиатуры.
 # Найдите минимальный и максимальный элементы вектора, а также сумму
 # элементов вектора.
 def task7():
+    print("task 7")
+
+    print('input vector\'s numbers')
     vector = [int(n) for n in input().split()]
+
     print('min: ', min(vector))
     print('max: ', max(vector))
     print('sum: ', sum(vector))
+
+    print()
 
 
 if __name__ == '__main__':
