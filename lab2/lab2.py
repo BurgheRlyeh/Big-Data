@@ -17,7 +17,7 @@ def task1():
 
     plt.figure(num='task 1')
     plt.title("x_k = sqrt(k * h) + norm(0, 1)")
-    plt.plot(ms, '.', color='blue', label="model series", )
+    plt.plot(ms, '.', color='blue', label="model series")
     plt.legend()
     # plt.show()
 
