@@ -7,6 +7,7 @@ h = 0.05
 norm = np.random.normal(0, 1, len(k))
 
 
+# 1. Сгенерировать модельный ряд x_k = sqrt(k * h) + norm(0, 1), k = 0...200, h = 0.05
 def model_series():
     return np.sqrt(k * h) + norm
 
@@ -21,6 +22,8 @@ def task1():
     # plt.show()
 
 
+# 2. Выделить тренд методом простого скользящего среднего с шириной окна
+# 21, 51, 111 (m=10, 25, 55)
 def trend_series():
     return np.sqrt(k * h)
 
@@ -57,6 +60,7 @@ def task2():
     # plt.show()
 
 
+# 3. Выделить тренд методом скользящей медианы с шириной окна 21, 51, 111
 def mm(data, m):
     res = []
 
@@ -87,6 +91,8 @@ def task3():
     # plt.show()
 
 
+# 4. Вычесть тренды из ряда и проверить остатки на случайность по числу
+# поворотных точек и коэффициенту Кендела
 def rotate_points(data):
     res = []
     for i in range(0, len(data) - 3):
