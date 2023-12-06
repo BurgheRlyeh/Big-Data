@@ -8,7 +8,9 @@ def huber(x: np.array, k: float):
 
 
 def boxplot_rule(x: np.array):
-    return [i for i in x if i not in plt.boxplot(x)["fliers"]]
+    outs = plt.boxplot(x)
+    clear_res = [i for i in x if i not in outs["fliers"]]
+    return clear_res
 
 
 def double_stage_mean(x: np.array):
@@ -39,7 +41,7 @@ def task():
     for dist, f_dist in distributions.items():
         print(dist)
         for measure, f_measure in measures.items():
-            mu, var = monte_karlo(10000, 100, f_dist, f_measure)
+            mu, var = monte_karlo(1000, 100, f_dist, f_measure)
             print(f"\t{measure}")
             print(f"\t\tMean:\t{mu:.6f}")
             print(f"\t\tDisp:\t{var:.6f}")
